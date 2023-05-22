@@ -14,15 +14,6 @@
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/userDetailsFragment"
-        android:name="com.example.weatherdemo.ui.postlogin.PreviousWeathersFragment"
-        android:label="user_details_fragment"
-        tools:layout="@layout/fragment_previous_weathers" >
-        <action
-            android:id="@+id/action_userDetailsFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.weatherdemo.ui.prelogin.LoginFragment"
         android:label="fragment_login"
@@ -31,7 +22,7 @@
             android:id="@+id/action_login_to_signup"
             app:destination="@id/registerFragment" />
         <action
-            android:id="@+id/action_login_to_userdetails"
+            android:id="@+id/action_login_to_weather_details"
             app:destination="@id/weatherdetails" />
     </fragment>
 

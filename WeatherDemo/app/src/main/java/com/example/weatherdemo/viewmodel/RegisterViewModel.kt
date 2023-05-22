@@ -1,7 +1,6 @@
 package com.example.weatherdemo.viewmodel
 
 import android.app.Application
-import android.util.Log
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.lifecycle.*
@@ -15,9 +14,6 @@ class RegisterViewModel(private val repository: RegisterRepository, application:
 
     init {
     }
-
-
-    private var userdata: String? = null
 
     var userDetailsLiveData = MutableLiveData<Array<RegisterEntity>>()
 
@@ -36,24 +32,22 @@ class RegisterViewModel(private val repository: RegisterRepository, application:
     private val viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
+    private val _navigateToLogin = MutableLiveData<Boolean>()
 
-    private val _navigateto = MutableLiveData<Boolean>()
-
-    val navigateto: LiveData<Boolean>
-        get() = _navigateto
+    val navigateToLogin: LiveData<Boolean>
+        get() = _navigateToLogin
 
     private val _errorToast = MutableLiveData<Boolean>()
 
-    val errotoast: LiveData<Boolean>
+    val errorToast: LiveData<Boolean>
         get() = _errorToast
 
     private val _errorToastUsername = MutableLiveData<Boolean>()
 
-    val errotoastUsername: LiveData<Boolean>
+    val errorToastUsername: LiveData<Boolean>
         get() = _errorToastUsername
 
-
-    fun sumbitButton() {
+    fun doRegisterUser() {
         if (inputFirstName.value == null || inputLastName.value == null || inputUsername.value == null || inputPassword.value == null) {
             _errorToast.value = true
         } else {
@@ -72,26 +66,29 @@ class RegisterViewModel(private val repository: RegisterRepository, application:
                     inputLastName.value = null
                     inputUsername.value = null
                     inputPassword.value = null
-                    _navigateto.value = true
+                    _navigateToLogin.value = true
                 }
             }
         }
     }
 
+    fun login() {
+        _navigateToLogin.value = true
+    }
 
     override fun onCleared() {
         super.onCleared()
     }
 
     fun doneNavigating() {
-        _navigateto.value = false
+        _navigateToLogin.value = false
     }
 
-    fun donetoast() {
+    fun toastError() {
         _errorToast.value = false
     }
 
-    fun donetoastUserName() {
+    fun toastErrorUsername() {
         _errorToast.value = false
     }
 

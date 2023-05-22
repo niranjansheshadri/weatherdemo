@@ -59,18 +59,18 @@ class LoginFragment : Fragment() {
                     "Please enter Username and Password.",
                     Toast.LENGTH_SHORT
                 ).show()
-                loginViewModel.donetoast()
+                loginViewModel.toastError()
             }
         })
 
-        loginViewModel.errotoastUsername.observe(viewLifecycleOwner, Observer { hasError ->
+        loginViewModel.erroToastUsername.observe(viewLifecycleOwner, Observer { hasError ->
             if (hasError == true) {
                 Toast.makeText(
                     requireContext(),
                     "User doesn't Exist. Please create an account use the app.",
                     Toast.LENGTH_SHORT
                 ).show()
-                loginViewModel.donetoastErrorUsername()
+                loginViewModel.toastErrorUsername()
             }
         })
 
@@ -78,13 +78,13 @@ class LoginFragment : Fragment() {
             if (hasError == true) {
                 Toast.makeText(requireContext(), "Please enter valid Password.", Toast.LENGTH_SHORT)
                     .show()
-                loginViewModel.donetoastInvalidPassword()
+                loginViewModel.toastInvalidPassword()
             }
         })
 
         loginViewModel.navigateToUserDetails.observe(viewLifecycleOwner, Observer { hasFinished ->
             if (hasFinished == true) {
-                navigateUserDetails()
+                navigateToWeatherDetails()
                 loginViewModel.doneNavigatingUserDetails()
             }
         })
@@ -97,8 +97,8 @@ class LoginFragment : Fragment() {
         NavHostFragment.findNavController(this).navigate(action)
     }
 
-    private fun navigateUserDetails() {
-        val action = LoginFragmentDirections.actionLoginToUserdetails()
+    private fun navigateToWeatherDetails() {
+        val action = LoginFragmentDirections.actionLoginToWeatherDetails()
         NavHostFragment.findNavController(this).navigate(action)
     }
 }

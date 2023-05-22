@@ -132,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/normal_padding_or_margin"
-                android:onClick="@{()->loginViewModel.signUP()}"
+                android:onClick="@{()->loginViewModel.signUp()}"
                 android:text="@string/title_create_account_info"
                 android:textSize="@dimen/medium_text_size" />
 

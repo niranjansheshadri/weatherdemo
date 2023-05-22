@@ -1,7 +1,6 @@
 package com.example.weatherdemo.ui.prelogin
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -44,36 +43,38 @@ class RegisterFragment : Fragment() {
         binding.registerViewModel = registerViewModel
 
         binding.lifecycleOwner = this
-        
-        registerViewModel.navigateto.observe(this, Observer { hasFinished->
-            if (hasFinished == true){
-                displayUsersList()
+
+        registerViewModel.navigateToLogin.observe(viewLifecycleOwner, Observer { hasFinished ->
+            if (hasFinished == true) {
+                navigateToLogin()
                 registerViewModel.doneNavigating()
             }
         })
 
-        registerViewModel.userDetailsLiveData.observe(this, Observer {
+        registerViewModel.userDetailsLiveData.observe(viewLifecycleOwner, Observer {
         })
 
 
-        registerViewModel.errotoast.observe(this, Observer { hasError->
-            if(hasError==true){
-                Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
-                registerViewModel.donetoast()
+        registerViewModel.errorToast.observe(viewLifecycleOwner, Observer { hasError ->
+            if (hasError == true) {
+                Toast.makeText(requireContext(), "Please enter all the fields.", Toast.LENGTH_SHORT)
+                    .show()
+                registerViewModel.toastError()
             }
         })
 
-        registerViewModel.errotoastUsername.observe(this, Observer { hasError->
-            if(hasError==true){
-                Toast.makeText(requireContext(), "UserName Already taken", Toast.LENGTH_SHORT).show()
-                registerViewModel.donetoastUserName()
+        registerViewModel.errorToastUsername.observe(viewLifecycleOwner, Observer { hasError ->
+            if (hasError == true) {
+                Toast.makeText(requireContext(), "Username already exists.", Toast.LENGTH_SHORT)
+                    .show()
+                registerViewModel.toastErrorUsername()
             }
         })
 
         return binding.root
     }
 
-    private fun displayUsersList() {
+    private fun navigateToLogin() {
         val action = RegisterFragmentDirections.actionRegisterFragmentToLoginFragment()
         NavHostFragment.findNavController(this).navigate(action)
     }

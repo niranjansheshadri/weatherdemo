@@ -1,7 +1,6 @@
 package com.example.weatherdemo.viewmodel
 
 import android.app.Application
-import android.util.Log
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.lifecycle.AndroidViewModel
@@ -16,21 +15,19 @@ import kotlinx.coroutines.launch
 class LoginViewModel(private val repository: RegisterRepository, application: Application) :
     AndroidViewModel(application), Observable {
 
-    val users = repository.users
+    @Bindable
+    val inputUsername = MutableLiveData<String?>()
 
     @Bindable
-    val inputUsername = MutableLiveData<String>()
-
-    @Bindable
-    val inputPassword = MutableLiveData<String>()
+    val inputPassword = MutableLiveData<String?>()
 
     private val viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
-    private val _navigateToRegister = MutableLiveData<Boolean>()
+    private val _navigateToSignup = MutableLiveData<Boolean>()
 
     val navigateToSignup: LiveData<Boolean>
-        get() = _navigateToRegister
+        get() = _navigateToSignup
 
     private val _navigateToUserDetails = MutableLiveData<Boolean>()
 
@@ -44,7 +41,7 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
 
     private val _errorToastUsername = MutableLiveData<Boolean>()
 
-    val errotoastUsername: LiveData<Boolean>
+    val erroToastUsername: LiveData<Boolean>
         get() = _errorToastUsername
 
     private val _errorToastInvalidPassword = MutableLiveData<Boolean>()
@@ -53,8 +50,8 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
         get() = _errorToastInvalidPassword
 
 
-    fun signUP() {
-        _navigateToRegister.value = true
+    fun signUp() {
+        _navigateToSignup.value = true
     }
 
     fun doLogin() {
@@ -79,7 +76,7 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
     }
 
     fun doNavigateToRegister() {
-        _navigateToRegister.value = false
+        _navigateToSignup.value = false
     }
 
     fun doneNavigatingUserDetails() {
@@ -87,16 +84,16 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
     }
 
 
-    fun donetoast() {
+    fun toastError() {
         _errorToast.value = false
     }
 
 
-    fun donetoastErrorUsername() {
+    fun toastErrorUsername() {
         _errorToastUsername.value = false
     }
 
-    fun donetoastInvalidPassword() {
+    fun toastInvalidPassword() {
         _errorToastInvalidPassword.value = false
     }
 
