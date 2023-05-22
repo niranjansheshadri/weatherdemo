@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.weatherdemo.ui.postlogin.PreviousWeathersFragment">
+
+    <data>
+
+        <variable
+            name="previousWeathers"
+            type="com.example.weatherdemo.viewmodel.PreviousWeathersViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_fpw_previous_weathers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/normal_padding_or_margin" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

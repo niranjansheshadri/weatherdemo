@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_padding_or_margin"
+        android:layout_marginEnd="@dimen/normal_padding_or_margin"
+        android:layout_marginBottom="@dimen/normal_padding_or_margin"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/colorCellBackground"
+            app:cardCornerRadius="@dimen/small_padding_or_margin"
+            app:cardElevation="@dimen/small_padding_or_margin">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/normal_padding_or_margin">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_fcw_item_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/title_na"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/small_text_size" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_fcw_item_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:hint="@string/title_na"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/xsmall_text_size" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_fcw_item_date_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/title_na"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/xsmall_text_size" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_fcw_item_temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/small_padding_or_margin"
+                    android:fontFamily="@font/roboto_medium"
+                    android:hint="@string/title_na"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/xxlarge_text_size"
+                    tools:ignore="RelativeOverlap" />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

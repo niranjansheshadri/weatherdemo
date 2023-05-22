@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.weatherdemo.ui.prelogin.RegisterFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailsFragment"
+        android:name="com.example.weatherdemo.ui.postlogin.PreviousWeathersFragment"
+        android:label="user_details_fragment"
+        tools:layout="@layout/fragment_previous_weathers" >
+        <action
+            android:id="@+id/action_userDetailsFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.weatherdemo.ui.prelogin.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_signup"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_login_to_userdetails"
+            app:destination="@id/weatherdetails" />
+    </fragment>
+
+    <activity
+        android:id="@+id/weatherdetails"
+        android:name="com.example.weatherdemo.ui.postlogin.WeatherDetails"
+        android:label="weather_details"
+        tools:layout="@layout/activity_weather_details" >
+    </activity>
+</navigation>

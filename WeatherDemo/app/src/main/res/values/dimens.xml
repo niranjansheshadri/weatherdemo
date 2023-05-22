@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_padding">8dp</dimen>
+
+    <dimen name="toolbar_height">56dp</dimen>
+
+    <dimen name="xxxlarge_padding_or_margin">32dp</dimen>
+    <dimen name="normal_padding_or_margin">16dp</dimen>
+    <dimen name="medium_padding_or_margin">14dp</dimen>
+    <dimen name="small_padding_or_margin">10dp</dimen>
+    <dimen name="xsmall_padding_or_margin">6dp</dimen>
+    <dimen name="xxsmall_padding_or_margin">3dp</dimen>
+
+    <dimen name="xxlarge_text_size">28sp</dimen>
+    <dimen name="xlarge_text_size">24sp</dimen>
+    <dimen name="large_text_size">20sp</dimen>
+    <dimen name="normal_text_size">18sp</dimen>
+    <dimen name="medium_text_size">17sp</dimen>
+    <dimen name="small_text_size">16sp</dimen>
+    <dimen name="xsmall_text_size">14sp</dimen>
+
+</resources>

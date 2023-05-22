@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Weather Demo</string>
+
+    <!-- Common Strings -->
+    <string name="title_username">Username</string>
+    <string name="title_password">Password</string>
+    <string name="title_copyrights">\u00A9 Company Name. All Rights Reserved.</string>
+
+    <!-- Register Screen Strings -->
+    <string name="title_create_your_account">Create your Account</string>
+    <string name="title_firstname">First Name</string>
+    <string name="title_lastname">Last Name</string>
+    <string name="title_create_account">Create Account</string>
+    <string name="title_login_to_account">Already have an Account? <u>Login</u></string>
+
+    <!-- Login Screen Strings -->
+    <string name="title_login_to_your_account">Login to your Account</string>
+    <string name="title_login">Login</string>
+    <string name="title_create_account_info">Don\'t have an account yet? <u>Signup</u></string>
+
+
+    <string name="title_na">NA</string>
+    <string name="List_of_Users_text">List Of Registered Users</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="backButton">Back</string>
+    <string name="title_weather_dashboard">Weather Dashboard</string>
+    <string name="title_not_available">Not Available</string>
+    <string name="title_weather_forecast_details">Weather Forecast Details</string>
+    <string name="title_location">Location</string>
+</resources>
