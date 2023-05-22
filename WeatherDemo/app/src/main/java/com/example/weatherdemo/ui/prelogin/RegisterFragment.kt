@@ -18,12 +18,6 @@ import com.example.weatherdemo.databinding.FragmentRegisterBinding
 import com.example.weatherdemo.viewmodel.RegisterViewModel
 import com.example.weatherdemo.viewmodel.factory.RegisterViewModelFactory
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [RegisterFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RegisterFragment : Fragment() {
 
     private lateinit var registerViewModel: RegisterViewModel
