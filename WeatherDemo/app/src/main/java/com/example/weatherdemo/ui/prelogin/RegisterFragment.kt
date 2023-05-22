@@ -53,14 +53,12 @@ class RegisterFragment : Fragment() {
         
         registerViewModel.navigateto.observe(this, Observer { hasFinished->
             if (hasFinished == true){
-                Log.i("MYTAG","insidi observe")
                 displayUsersList()
                 registerViewModel.doneNavigating()
             }
         })
 
         registerViewModel.userDetailsLiveData.observe(this, Observer {
-            Log.i("MYTAG",it.toString()+"000000000000000000000000")
         })
 
 
@@ -82,10 +80,8 @@ class RegisterFragment : Fragment() {
     }
 
     private fun displayUsersList() {
-        Log.i("MYTAG","insidisplayUsersList")
         val action = RegisterFragmentDirections.actionRegisterFragmentToLoginFragment()
         NavHostFragment.findNavController(this).navigate(action)
-
     }
 
 }
